@@ -8,6 +8,16 @@ const sequelize = new Sequelize(
   {
     host: CONFIG.DB_HOST,
     dialect: CONFIG.DB_DIALECT,
+  },
+  {
+    operatorsAliases: false,
+
+    DB_POOL: {
+      max: CONFIG.DB.pool.max,
+      min: CONFIG.DB.pool.min,
+      acquire: CONFIG.DB.pool.acquire,
+      idle: CONFIG.DB.pool.idle,
+    },
   }
 );
 
